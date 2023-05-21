@@ -1,0 +1,12 @@
+{
+    "name": "Synced",
+    "alias": "synced",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Ids\\Modules\\Synced\\Providers\\SyncedServiceProvider",
+        "Ids\\Modules\\Synced\\Providers\\EventServiceProvider"
+    ],
+    "files": []
+}

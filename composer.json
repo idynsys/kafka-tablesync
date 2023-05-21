@@ -1,0 +1,23 @@
+{
+    "name": "idynsys/synced",
+    "description": "Module for sync models",
+    "type": "library",
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ids\\Modules\\Synced\\\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "IDS"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "symfony/var-dumper": "5.4.x-dev"
+    }
+}
