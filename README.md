@@ -22,14 +22,22 @@ composer req ids/synced
 1. необходимо добавить в app.php
    Ids\Modules\Synced\Providers\SyncedServiceProvider::class
 
-2. запустить
+2. Добавить в modules_statuses.json 
+```
+{
+   "UserAccess": true,
+   "Synced": true
+   }
+```
+
+3. Запустить
    php artisan vendor:publish --provider="Ids\Modules\Synced\SyncedServiceProvider"
 
-3. добавить интерфейс SyncedModelInterface и  трейт (для отслеживания изменение модели)
+4. Добавить интерфейс SyncedModelInterface и  трейт (для отслеживания изменение модели)
 ```
 use Synced; 
 ```
-4. зарегистрировать события в конструкторе, например:
+5. Зарегистрировать события в конструкторе, например:
 ```
         public function __construct(array $attributes = [])
         {
@@ -37,7 +45,7 @@ use Synced;
             $this->registerSyncedListeners();
         }
 ```
-5. Реализовать методы
+6. Реализовать методы
 ```
     public function getRouteKey(): string;
     public function getSyncedAttributes(): array;
