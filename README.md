@@ -9,7 +9,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url":  "git@gitlab.idynsys.org:wlb_project/b2b/kafka-synced.git"
+      "url":  "<путь и доступы к репозиторию пакета, если не публичный>"
     }
   ]
 }
