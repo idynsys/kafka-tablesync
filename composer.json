@@ -1,5 +1,5 @@
 {
-    "name": "idynsys/synced",
+    "name": "idynsys/synced-module",
     "description": "Module for sync models",
     "type": "laravel-module",
     "require": {

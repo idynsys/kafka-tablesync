@@ -15,7 +15,7 @@
 }
 ```
 ```
-composer req ids/synced
+composer req idynsys/synced-module
 ```
 
 #установка
