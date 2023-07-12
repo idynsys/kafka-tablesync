@@ -3,7 +3,6 @@
 namespace Ids\Modules\Synced\Providers;
 
 use Ids\Modules\Synced\Console\SyncedConsumerCommand;
-use Ids\Modules\Synced\Console\TestCreated;
 use Ids\Modules\Synced\Service\KafkaPublisherDataFactory;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,10 +26,7 @@ class SyncedServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            $this->commands([
-                SyncedConsumerCommand::class,
-                TestCreated::class,
-            ]);
+            $this->commands([SyncedConsumerCommand::class]);
         }
     }
 
