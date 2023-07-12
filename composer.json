@@ -1,7 +1,7 @@
 {
     "name": "idynsys/synced",
     "description": "Module for sync models",
-    "type": "library",
+    "type": "laravel-module",
     "require": {
         "php": "^8.0",
         "ext-json": "*"
