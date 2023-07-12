@@ -2,20 +2,15 @@
 
 namespace Ids\Modules\Synced\Listeners;
 
-use Ids\Modules\Synced\Events\Created;
-use ThiagoBrauer\LaravelKafka\KafkaProducer;
+use Ids\Modules\Synced\Events\Updated;
 
-class UpdatedListener
+class UpdatedListener extends AbstractListener
 {
-    private KafkaProducer $producer;
-
-    public function __construct()
+    /**
+     * @throws \JsonException
+     */
+    public function handle(Updated $event): void
     {
-        $this->producer = new KafkaProducer();
-    }
-
-    public function handle(Created $event): void
-    {
-        $this->producer->setTopic()->send(json_encode($object->getArray(), JSON_THROW_ON_ERROR));
+        $this->kafkaSender->send('updated', $event->getModel());
     }
 }

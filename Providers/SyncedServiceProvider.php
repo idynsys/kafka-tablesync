@@ -8,15 +8,9 @@ use Illuminate\Support\ServiceProvider;
 
 class SyncedServiceProvider extends ServiceProvider
 {
-    /**
-     * @var string $moduleName
-     */
-    protected $moduleName = 'Synced';
+    protected string $moduleName = 'Synced';
 
-    /**
-     * @var string $moduleNameLower
-     */
-    protected $moduleNameLower = 'synced';
+    protected string $moduleNameLower = 'synced';
 
     /**
      * Boot the application events.
