@@ -10,7 +10,7 @@ use ThiagoBrauer\LaravelKafka\KafkaProducer;
 
 class KafkaSender
 {
-    public const TOPIC_NAME = 'synced';
+    public const DEFAULT_TOPIC_NAME = 'synced';
     private KafkaProducer $producer;
     private KafkaPublisherDataFactory $kafkaPublishDataFactory;
 
@@ -27,6 +27,9 @@ class KafkaSender
     {
         $data = $this->kafkaPublishDataFactory->create($event, $model);
 
-        $this->producer->setTopic(self::TOPIC_NAME)->send(json_encode($data->export(), JSON_THROW_ON_ERROR));
+        $topics = $model->getTopics() ?? [self::DEFAULT_TOPIC_NAME];
+        foreach ($topics as $topic) {
+            $this->producer->setTopic($topic)->send(json_encode($data->export(), JSON_THROW_ON_ERROR));
+        }
     }
 }

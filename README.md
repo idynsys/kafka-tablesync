@@ -49,6 +49,8 @@ use Synced;
 ```
     public function getRouteKey(): string;
     public function getSyncedAttributes(): array;
+    public function getTopics(): array;
 ```
 где RouteKey должен определить название назначение сущности(название),
     SyncedAttributes должне вернуть массив данных передаваемый для обмена
+    Topics - набор топиков в которые закинем модель (по умолначию synced)

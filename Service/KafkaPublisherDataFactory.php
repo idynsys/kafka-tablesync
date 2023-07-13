@@ -25,7 +25,6 @@ class KafkaPublisherDataFactory
     public function createByJson(string $json): KafkaPublishData
     {
         $data = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
-        dump($data);
 
         return new KafkaPublishData(
             $data['event'],

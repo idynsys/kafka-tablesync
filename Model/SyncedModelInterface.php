@@ -6,4 +6,5 @@ interface SyncedModelInterface
 {
     public function getRouteKey(): string;
     public function getSyncedAttributes(): array;
+    public function getTopics(): array;
 }

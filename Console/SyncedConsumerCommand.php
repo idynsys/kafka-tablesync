@@ -32,7 +32,7 @@ class SyncedConsumerCommand extends ConsumerCommand
         $this->validateMessageHandlers($messageHandlers);
 
         $consumer = new KafkaConsumer($this->getConfig());
-        $consumer->subscribe([KafkaSender::TOPIC_NAME]);
+        $consumer->subscribe([KafkaSender::DEFAULT_TOPIC_NAME]);
 
         while (true) {
             /** @var RdKafka\Message $message */
