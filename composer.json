@@ -4,7 +4,8 @@
     "type": "laravel-module",
     "require": {
         "php": "^8.0",
-        "ext-json": "*"
+        "ext-json": "*",
+        "thiagobrauer/laravel-kafka": "dev-main"
     },
     "autoload": {
         "psr-4": {
