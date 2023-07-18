@@ -5,7 +5,8 @@
     "require": {
         "php": "^8.0",
         "ext-json": "*",
-        "thiagobrauer/laravel-kafka": "dev-main"
+        "ext-rdkafka": "*",
+        "mateusjunges/laravel-kafka": "^1.10"
     },
     "autoload": {
         "psr-4": {

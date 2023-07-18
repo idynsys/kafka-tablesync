@@ -20,7 +20,7 @@ class SyncedServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            $this->commands([SyncedConsumerCommand::class]);
+            $this->commands();
         }
     }
 

@@ -31,8 +31,10 @@ composer req idynsys/synced-module
 ```
 
 3. Запустить
+   php artisan vendor:publish --tag=laravel-kafka-config
    php artisan vendor:publish --provider="Ids\Modules\Synced\SyncedServiceProvider"
 
+    После, необходимо сконфигурировать kafka.php (если не настроена kafka)
 4. Добавить интерфейс SyncedModelInterface и  трейт (для отслеживания изменение модели)
 ```
 use Synced; 
