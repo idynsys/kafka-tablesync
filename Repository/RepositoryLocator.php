@@ -31,7 +31,7 @@ class RepositoryLocator
     public function process(KafkaPublishData $data): void
     {
         $repo = $this->getRepository($data->getRoutingKey());
-        switch ($data->getRoutingKey()) {
+        switch ($data->getEvent()) {
             case 'create':
                 $repo->create($data);
                 break;
@@ -42,7 +42,7 @@ class RepositoryLocator
                 $repo->delete($data);
                 break;
             default:
-                throw new UnknownStateException($data->getRoutingKey());
+                throw new UnknownStateException($data->getEvent());
         }
     }
 }
