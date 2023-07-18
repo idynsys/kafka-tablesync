@@ -19,9 +19,6 @@ class KafkaPublisherDataFactory
         );
     }
 
-    /**
-     * @throws \JsonException
-     */
     public function createByJson(string $data): KafkaPublishData
     {
         return new KafkaPublishData(

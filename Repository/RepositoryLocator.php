@@ -13,10 +13,9 @@ class RepositoryLocator
         $this->repositories[$routeKey] = $repository;
     }
 
-    public function getRepository($routeKey)
+    public function getRepository($routeKey): SyncedRepositoryInterface
     {
-        if (!$this->repositories[$routeKey])
-        {
+        if ( ! $this->repositories[$routeKey]) {
             throw new \RuntimeException(\sprintf('Unknown route key %s', $routeKey));
         }
         return $this->repositories[$routeKey];

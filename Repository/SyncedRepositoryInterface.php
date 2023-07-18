@@ -2,11 +2,11 @@
 
 namespace Ids\Modules\Synced\Repository;
 
-use Ids\Modules\Synced\Service\KafkaPublishMetaData;
+use Ids\Modules\Synced\Service\KafkaPublishData;
 
 interface SyncedRepositoryInterface
 {
-    public function create(KafkaPublishMetaData $data);
-    public function update(KafkaPublishMetaData $data);
-    public function delete(KafkaPublishMetaData $data);
+    public function create(KafkaPublishData $data);
+    public function update(KafkaPublishData $data);
+    public function delete(KafkaPublishData $data);
 }
