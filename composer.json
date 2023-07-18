@@ -6,7 +6,7 @@
         "php": "^8.0",
         "ext-json": "*",
         "ext-rdkafka": "*",
-        "mateusjunges/laravel-kafka": "^1.13"
+        "mateusjunges/laravel-kafka": "^1.10"
     },
     "autoload": {
         "psr-4": {
