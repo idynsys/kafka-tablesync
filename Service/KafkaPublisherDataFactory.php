@@ -22,10 +22,8 @@ class KafkaPublisherDataFactory
     /**
      * @throws \JsonException
      */
-    public function createByJson(string $json): KafkaPublishData
+    public function createByJson(string $data): KafkaPublishData
     {
-        $data = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
-
         return new KafkaPublishData(
             $data['event'],
             $data['routingKey'],
