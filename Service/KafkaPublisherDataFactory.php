@@ -19,7 +19,7 @@ class KafkaPublisherDataFactory
         );
     }
 
-    public function createByJson(string $data): KafkaPublishData
+    public function createByData(array $data): KafkaPublishData
     {
         return new KafkaPublishData(
             $data['event'],
