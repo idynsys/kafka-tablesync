@@ -6,7 +6,7 @@ use Ids\Modules\Synced\Service\KafkaPublishData;
 
 interface SyncedRepositoryInterface
 {
-    public function create(KafkaPublishData $data);
-    public function update(KafkaPublishData $data);
-    public function delete(KafkaPublishData $data);
+    public function createByKafka(KafkaPublishData $data);
+    public function updateByKafka(KafkaPublishData $data);
+    public function deleteByKafka(KafkaPublishData $data);
 }
