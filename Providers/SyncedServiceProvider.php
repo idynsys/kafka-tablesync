@@ -19,9 +19,10 @@ class SyncedServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if ($this->app->runningInConsole()) {
-            $this->commands();
-        }
+    // actually we haven't any commands for now
+    //        if ($this->app->runningInConsole()) {
+    //            $this->commands([]);
+    //        }
     }
 
     /**
