@@ -28,9 +28,9 @@ composer req idynsys/synced-module
   'SyncedRepositoryInterface', например:
 ```
     'repositories' => [
-        ['product' => \App\Modules\Products\Repositories\ProductRepository::class],
-        ['product' => \App\Modules\Organizations\Repositories\OrganizationRepository::class],
-        ['product' => \App\Modules\Applications\Repositories\ApplicationRepository::class],
+        'product' => 'App\Modules\Products\Repositories\ProductRepository',
+        'organization' => 'App\Modules\Organizations\Repositories\OrganizationRepository',
+        'application' => 'App\Modules\Applications\Repositories\ApplicationRepository',
     ],
 ```
 

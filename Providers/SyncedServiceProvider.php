@@ -23,10 +23,9 @@ class SyncedServiceProvider extends ServiceProvider
         __DIR__."/../Config/synced.php" => config_path('synced.php'),
     ], 'synced-config');
 
-    // actually we haven't any commands for now
-    //        if ($this->app->runningInConsole()) {
-    //            $this->commands([]);
-    //        }
+            if ($this->app->runningInConsole()) {
+                $this->commands([SyncedConsumerCommand::class]);
+            }
     }
 
     /**

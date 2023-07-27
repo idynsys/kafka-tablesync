@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'command-signature' => 'consume:entity',
+    'command-signature' => 'synced:consume:entity',
     'repositories' => [
         //add your repositories here routeKey=>ClassName
     ],
