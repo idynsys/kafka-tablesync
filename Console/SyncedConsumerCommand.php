@@ -1,7 +1,7 @@
 <?php
 namespace Ids\Modules\Synced\Console;
 
-use App\Kafka\EntityConsumer;
+use Ids\Modules\Synced\Kafka\EntityConsumer;
 use Illuminate\Console\Command;
 
 class SyncedConsumerCommand extends Command
