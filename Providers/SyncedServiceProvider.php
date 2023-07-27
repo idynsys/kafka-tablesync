@@ -19,6 +19,10 @@ class SyncedServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+    $this->publishes([
+        __DIR__."/../Config/synced.php" => config_path('synced.php'),
+    ], 'synced-config');
+
     // actually we haven't any commands for now
     //        if ($this->app->runningInConsole()) {
     //            $this->commands([]);
