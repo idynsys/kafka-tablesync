@@ -26,6 +26,7 @@ class EntityConsumer
 
         //register repositories
         foreach (config('synced.repositories') as $route => $repoClass) {
+            Log::debug("$route:$repoClass".' - registered repository');
             $this->repositoryLocator->registerSyncedRepository($route, app($repoClass));
         }
     }
