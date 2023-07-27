@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'repositories' => []
+    'command-signature' => 'consume:entity',
+    'repositories' => [
+        //add your repositories here routeKey=>ClassName
+    ],
 ];

@@ -3,7 +3,6 @@
 # Установка
 Используйте [composer](https://getcomposer.org/) для установки
 
-
 ```json
 {
   "repositories": [
@@ -20,21 +19,29 @@ composer req idynsys/synced-module
 
 #установка
 1. необходимо добавить в app.php
-   Ids\Modules\Synced\Providers\SyncedServiceProvider::class
+   >Ids\Modules\Synced\Providers\SyncedServiceProvider::class
 
-2. Добавить в modules_statuses.json 
+2. Добавим файл конфига
+   >php artisan vendor:publish --tag=synced-config
+
+   Далее необходимо сконфигурировать репозитории, реализующие интерфейс записи данных:`SyncedRepositoryInterface`
+  'SyncedRepositoryInterface', например:
 ```
-{
-   "UserAccess": true,
-   "Synced": true
-   }
+    'repositories' => [
+        ['product' => \App\Modules\Products\Repositories\ProductRepository::class],
+        ['product' => \App\Modules\Organizations\Repositories\OrganizationRepository::class],
+        ['product' => \App\Modules\Applications\Repositories\ApplicationRepository::class],
+    ],
 ```
+
 
 3. Запустить
    php artisan vendor:publish --tag=laravel-kafka-config
    php artisan vendor:publish --provider="Ids\Modules\Synced\SyncedServiceProvider"
 
-    После, необходимо сконфигурировать kafka.php (если не настроена kafka)
+   После, необходимо сконфигурировать kafka.php (если не настроена kafka)
+
+
 4. Добавить интерфейс SyncedModelInterface и  трейт (для отслеживания изменение модели)
 ```
 use Synced; 
