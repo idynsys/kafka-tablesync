@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Log;
 
 class KafkaSender
 {
-    public const DEFAULT_TOPIC_NAME = 'synced';
     private KafkaPublisherDataFactory $kafkaPublishDataFactory;
 
     public function __construct()
@@ -23,7 +22,8 @@ class KafkaSender
     public function send(string $event, SyncedModelInterface $model): void
     {
         $data = $this->kafkaPublishDataFactory->create($event, $model);
-        $topics = $model->getTopics() ?? [self::DEFAULT_TOPIC_NAME];
+        $topics = $model->getTopics();
+        $topics[] = $model->getRouteKey();
         foreach ($topics as $topic) {
             $message = Message::create($topic, RD_KAFKA_PARTITION_UA)->withBody(['body'=>$data->export()]);
             Kafka::publishOn($topic)->withMessage($message)->send();
