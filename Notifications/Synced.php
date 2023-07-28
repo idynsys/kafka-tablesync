@@ -21,19 +21,19 @@ trait Synced
         ];
     }
 
-    public function getRouteKey()
+    public function getRouteKey(): string
     {
         $classNameWithNamespace = static::class;
 
         return strtolower(substr($classNameWithNamespace, strrpos($classNameWithNamespace, '\\') + 1));
     }
 
-    public function getSyncedAttributes()
+    public function getSyncedAttributes(): array
     {
         return $this->toArray();
     }
 
-    public function getTopics()
+    public function getTopics(): array
     {
         return [];
     }
