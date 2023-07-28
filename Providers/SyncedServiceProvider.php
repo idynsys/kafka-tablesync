@@ -19,13 +19,13 @@ class SyncedServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-    $this->publishes([
-        __DIR__."/../Config/synced.php" => config_path('synced.php'),
-    ], 'synced-config');
+        $this->publishes([
+            __DIR__."/../Config/synced.php" => config_path('synced.php'),
+        ], 'synced-config');
 
-            if ($this->app->runningInConsole()) {
-                $this->commands([SyncedConsumerCommand::class]);
-            }
+        if ($this->app->runningInConsole()) {
+            $this->commands([SyncedConsumerCommand::class]);
+        }
     }
 
     /**
@@ -37,7 +37,7 @@ class SyncedServiceProvider extends ServiceProvider
     {
         return [
             EventServiceProvider::class,
-            KafkaPublisherDataFactory::class
+            KafkaPublisherDataFactory::class,
         ];
     }
 }

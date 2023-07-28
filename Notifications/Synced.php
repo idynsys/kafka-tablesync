@@ -20,4 +20,21 @@ trait Synced
             'deleted' => Deleted::class,
         ];
     }
+
+    public function getRouteKey()
+    {
+        $classNameWithNamespace = static::class;
+
+        return substr($classNameWithNamespace, strrpos($classNameWithNamespace, '\\') + 1);
+    }
+
+    public function getSyncedAttributes()
+    {
+        return $this->toArray();
+    }
+
+    public function getTopics()
+    {
+        return [];
+    }
 }
