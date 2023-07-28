@@ -85,7 +85,7 @@ class User implements SyncedModelInterface
      */
     public function getTopics(): array
     {
-        return ['application'];
+        return [];
     }
 }
 ```
