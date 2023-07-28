@@ -69,7 +69,7 @@ class User implements SyncedModelInterface
      */
     public function getRouteKey(): string
     {
-        return 'application';
+        return 'user';
     }
 
     /**
