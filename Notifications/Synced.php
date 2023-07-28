@@ -25,7 +25,7 @@ trait Synced
     {
         $classNameWithNamespace = static::class;
 
-        return substr($classNameWithNamespace, strrpos($classNameWithNamespace, '\\') + 1);
+        return strtolower(substr($classNameWithNamespace, strrpos($classNameWithNamespace, '\\') + 1));
     }
 
     public function getSyncedAttributes()
