@@ -23,9 +23,11 @@ class KafkaSender
     {
         $data = $this->kafkaPublishDataFactory->create($event, $model);
         $topics = $model->getTopics();
-        $topics[] = $model->getRouteKey();
+        if (!in_array($model->getRouteKey(), $topics)) {
+            $topics[] = $model->getRouteKey();
+        }
         foreach ($topics as $topic) {
-            $message = Message::create($topic, RD_KAFKA_PARTITION_UA)->withBody(['body'=>$data->export()]);
+            $message = Message::create($topic, RD_KAFKA_PARTITION_UA)->withBody(['body' => $data->export()]);
             Kafka::publishOn($topic)->withMessage($message)->send();
         }
     }
