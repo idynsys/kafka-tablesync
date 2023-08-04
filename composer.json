@@ -1,0 +1,25 @@
+{
+    "name": "idynsys/synced-module",
+    "description": "Module for sync models",
+    "type": "laravel-module",
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*",
+        "ext-rdkafka": "*",
+        "mateusjunges/laravel-kafka": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ids\\Modules\\Synced\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "IDS"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "symfony/var-dumper": "5.4.x-dev"
+    }
+}
