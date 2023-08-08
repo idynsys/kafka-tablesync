@@ -36,6 +36,7 @@ composer req idynsys/synced-module
    >KAFKA_BROKERS: localhost:9092
    >KAFKA_CONSUMER_GROUP_ID: 'group'
 
+* после настройки брокера и добавления в .env, необходимо убедиться в доступности брокера kafka по сети (для docker compose необходимо настроить общую сеть)
 
 
 #

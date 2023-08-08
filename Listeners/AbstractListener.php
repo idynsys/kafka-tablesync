@@ -9,6 +9,7 @@ use Ids\Modules\Synced\Service\KafkaSender;
 abstract class AbstractListener
 {
     protected KafkaSender $kafkaSender;
+    public $afterCommit = true;
 
     public function __construct()
     {
