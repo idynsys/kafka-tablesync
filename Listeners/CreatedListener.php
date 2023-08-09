@@ -11,6 +11,6 @@ class CreatedListener extends AbstractListener
      */
     public function handle(Created $event): void
     {
-        $this->kafkaSender->send('create', $event->getModel());
+        $this->kafkaSender->send('created', $event->getModel());
     }
 }
