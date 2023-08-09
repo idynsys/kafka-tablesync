@@ -4,9 +4,10 @@ namespace Ids\Modules\Synced\Providers;
 
 use Ids\Modules\Synced\Console\SyncedConsumerCommand;
 use Ids\Modules\Synced\Service\KafkaPublisherDataFactory;
+use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class SyncedServiceProvider extends ServiceProvider
+class SyncedServiceProvider extends ServiceProvider  implements DeferrableProvider
 {
     protected string $moduleName = 'Synced';
 
