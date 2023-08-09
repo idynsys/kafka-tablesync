@@ -32,13 +32,13 @@ class RepositoryLocator
     {
         $repo = $this->getRepository($data->getRoutingKey());
         switch ($data->getEvent()) {
-            case 'create':
+            case 'created':
                 $repo->createByKafka($data);
                 break;
-            case 'update':
+            case 'updated':
                 $repo->updateByKafka($data);
                 break;
-            case 'delete':
+            case 'deleted':
                 $repo->deleteByKafka($data);
                 break;
             default:
