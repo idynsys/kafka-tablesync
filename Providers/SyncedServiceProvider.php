@@ -3,12 +3,24 @@
 namespace Ids\Modules\Synced\Providers;
 
 use Ids\Modules\Synced\Console\SyncedConsumerCommand;
+use Ids\Modules\Synced\Events\Created;
+use Ids\Modules\Synced\Events\Deleted;
+use Ids\Modules\Synced\Events\Updated;
+use Ids\Modules\Synced\Listeners\CreatedListener;
+use Ids\Modules\Synced\Listeners\DeletedListener;
+use Ids\Modules\Synced\Listeners\UpdatedListener;
 use Ids\Modules\Synced\Service\KafkaPublisherDataFactory;
 use Illuminate\Contracts\Support\DeferrableProvider;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\Support\Providers\EventServiceProvider;
 
-class SyncedServiceProvider extends ServiceProvider  implements DeferrableProvider
+class SyncedServiceProvider extends EventServiceProvider implements DeferrableProvider
 {
+
+    protected $listen = [
+        Created::class => [CreatedListener::class],
+        Updated::class => [UpdatedListener::class],
+        Deleted::class => [DeletedListener::class],
+    ];
     protected string $moduleName = 'Synced';
 
     protected string $moduleNameLower = 'synced';
@@ -37,7 +49,6 @@ class SyncedServiceProvider extends ServiceProvider  implements DeferrableProvid
     public function provides(): array
     {
         return [
-            EventServiceProvider::class,
             KafkaPublisherDataFactory::class,
         ];
     }
