@@ -5,8 +5,7 @@
     "keywords": [],
     "priority": 0,
     "providers": [
-        "Ids\\Modules\\Synced\\Providers\\SyncedServiceProvider",
-        "Ids\\Modules\\Synced\\Providers\\EventServiceProvider"
+        "Ids\\Modules\\Synced\\Providers\\SyncedServiceProvider"
     ],
     "files": []
 }
