@@ -10,10 +10,9 @@ use Ids\Modules\Synced\Listeners\CreatedListener;
 use Ids\Modules\Synced\Listeners\DeletedListener;
 use Ids\Modules\Synced\Listeners\UpdatedListener;
 use Ids\Modules\Synced\Service\KafkaPublisherDataFactory;
-use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider;
 
-class SyncedServiceProvider extends EventServiceProvider implements DeferrableProvider
+class SyncedServiceProvider extends EventServiceProvider
 {
 
     protected $listen = [
